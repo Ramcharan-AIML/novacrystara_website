@@ -1,0 +1,552 @@
+﻿MATCH at index 9943 : /api/enrollments
+    h-4 w-4
+    })})}),a.jsx(IT,{children:t})]}));af.displayName=qw.displayName;const VT=h.forwardRef(({className:e,...t},n)=>a.jsx(Jw,{ref:n,className:de(
+    -mx-1 my-1 h-px bg-muted
+    ,e),...t}));VT.displayName=Jw.displayName;function hg({children:e}){const[t,n]=h.useState(!1),[r,s]=h.useState(
+    
+    ),[o,i]=h.useState(
+    
+    ),[l,c]=h.useState(
+    
+    ),{toast:u}=Os(),{data:d}=vt({queryKey:[
+>>> /api/enrollments
+    ]}),{data:f}=vt({queryKey:[
+    /api/modules
+    ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+    /api/projects
+    ,{method:
+    POST
+    ,body:JSON.stringify(g)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+----------------------------------------
+MATCH at index 9945 : /api/modules
+    -mx-1 my-1 h-px bg-muted
+    ,e),...t}));VT.displayName=Jw.displayName;function hg({children:e}){const[t,n]=h.useState(!1),[r,s]=h.useState(
+    
+    ),[o,i]=h.useState(
+    
+    ),[l,c]=h.useState(
+    
+    ),{toast:u}=Os(),{data:d}=vt({queryKey:[
+    /api/enrollments
+    ]}),{data:f}=vt({queryKey:[
+>>> /api/modules
+    ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+    /api/projects
+    ,{method:
+    POST
+    ,body:JSON.stringify(g)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),u({title:
+    Project created
+----------------------------------------
+MATCH at index 9947 : /api/projects
+    
+    ),[o,i]=h.useState(
+    
+    ),[l,c]=h.useState(
+    
+    ),{toast:u}=Os(),{data:d}=vt({queryKey:[
+    /api/enrollments
+    ]}),{data:f}=vt({queryKey:[
+    /api/modules
+    ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+>>> /api/projects
+    ,{method:
+    POST
+    ,body:JSON.stringify(g)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),u({title:
+    Project created
+    ,description:
+    Your new project has been created successfully.
+----------------------------------------
+MATCH at index 9951 : /api/projects
+    
+    ),{toast:u}=Os(),{data:d}=vt({queryKey:[
+    /api/enrollments
+    ]}),{data:f}=vt({queryKey:[
+    /api/modules
+    ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+    /api/projects
+    ,{method:
+    POST
+    ,body:JSON.stringify(g)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+>>> /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),u({title:
+    Project created
+    ,description:
+    Your new project has been created successfully.
+    }),n(!1),s(
+    
+    ),i(
+    
+----------------------------------------
+MATCH at index 10067 : /api/enrollments
+    data-testid
+    :
+    button-submit-project
+    ,children:[w.isPending&&a.jsx(Ll,{className:
+    h-4 w-4 mr-2 animate-spin
+    }),
+    Create Project
+    ]})]})]})]})]})}function $T(){const{user:e}=$h(),{data:t,isLoading:n,error:r,refetch:s}=vt({queryKey:[
+    /api/dashboard/stats
+    ]}),{data:o,isLoading:i,error:l,refetch:c}=vt({queryKey:[
+>>> /api/enrollments
+    ]}),{data:u,isLoading:d,error:f,refetch:p}=vt({queryKey:[
+    /api/projects
+    ]}),{data:w,isLoading:b,error:g,refetch:x}=vt({queryKey:[
+    /api/certifications
+    ]}),{data:v}=vt({queryKey:[
+    /api/modules
+    ]}),m=r||l||f||g,y=N=>{if(!N||!v)return
+    Unknown Module
+    ;const T=v.find(O=>O.id===N);return(T==null?void 0:T.title)||
+    Unknown Module
+----------------------------------------
+MATCH at index 10069 : /api/projects
+    button-submit-project
+    ,children:[w.isPending&&a.jsx(Ll,{className:
+    h-4 w-4 mr-2 animate-spin
+    }),
+    Create Project
+    ]})]})]})]})]})}function $T(){const{user:e}=$h(),{data:t,isLoading:n,error:r,refetch:s}=vt({queryKey:[
+    /api/dashboard/stats
+    ]}),{data:o,isLoading:i,error:l,refetch:c}=vt({queryKey:[
+    /api/enrollments
+    ]}),{data:u,isLoading:d,error:f,refetch:p}=vt({queryKey:[
+>>> /api/projects
+    ]}),{data:w,isLoading:b,error:g,refetch:x}=vt({queryKey:[
+    /api/certifications
+    ]}),{data:v}=vt({queryKey:[
+    /api/modules
+    ]}),m=r||l||f||g,y=N=>{if(!N||!v)return
+    Unknown Module
+    ;const T=v.find(O=>O.id===N);return(T==null?void 0:T.title)||
+    Unknown Module
+    },S=async()=>{try{await fetch(
+    /api/logout
+----------------------------------------
+MATCH at index 10073 : /api/modules
+    Create Project
+    ]})]})]})]})]})}function $T(){const{user:e}=$h(),{data:t,isLoading:n,error:r,refetch:s}=vt({queryKey:[
+    /api/dashboard/stats
+    ]}),{data:o,isLoading:i,error:l,refetch:c}=vt({queryKey:[
+    /api/enrollments
+    ]}),{data:u,isLoading:d,error:f,refetch:p}=vt({queryKey:[
+    /api/projects
+    ]}),{data:w,isLoading:b,error:g,refetch:x}=vt({queryKey:[
+    /api/certifications
+    ]}),{data:v}=vt({queryKey:[
+>>> /api/modules
+    ]}),m=r||l||f||g,y=N=>{if(!N||!v)return
+    Unknown Module
+    ;const T=v.find(O=>O.id===N);return(T==null?void 0:T.title)||
+    Unknown Module
+    },S=async()=>{try{await fetch(
+    /api/logout
+    ,{method:
+    POST
+    ,credentials:
+    include
+----------------------------------------
+MATCH at index 10681 : /api/modules
+    h-16 w-full
+    }),a.jsxs(
+    div
+    ,{className:
+    flex gap-2 mt-4
+    ,children:[a.jsx(Ie,{className:
+    h-6 w-20
+    }),a.jsx(Ie,{className:
+    h-6 w-16
+    })]})]})]})}function WT(){const{data:e,isLoading:t,error:n}=vt({queryKey:[
+>>> /api/modules
+    ]});return a.jsxs(
+    div
+    ,{className:
+    min-h-screen bg-background
+    ,children:[a.jsx(
+    header
+    ,{className:
+    border-b bg-card
+    ,children:a.jsx(
+    div
+----------------------------------------
+MATCH at index 10853 : /api/modules
+    AI Agents
+    :kh,IoT:jh,
+    Multi Cloud
+    :Nh,default:jc},HT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+>>> /api/modules
+    ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+    /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+    /api/enrollments
+    ,{credentials:
+    include
+----------------------------------------
+MATCH at index 10854 : ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    :kh,IoT:jh,
+    Multi Cloud
+    :Nh,default:jc},HT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/modules
+>>> ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+    /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+    /api/enrollments
+    ,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+----------------------------------------
+MATCH at index 10859 : /api/enrollments
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/modules
+    ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+>>> /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+    /api/enrollments
+    ,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch enrollments
+    );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    POST
+    ,
+    /api/enrollments
+----------------------------------------
+MATCH at index 10861 : /api/enrollments
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/modules
+    ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+    /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+>>> /api/enrollments
+    ,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch enrollments
+    );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    POST
+    ,
+    /api/enrollments
+    ,{moduleId:t})).json(),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/enrollments
+----------------------------------------
+MATCH at index 10869 : /api/enrollments
+    /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+    /api/enrollments
+    ,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch enrollments
+    );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    POST
+    ,
+>>> /api/enrollments
+    ,{moduleId:t})).json(),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/enrollments
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r({title:
+    Enrolled successfully!
+    ,description:
+    You can now start learning this module.
+    })},onError:p=>{r({title:
+    Enrollment failed
+----------------------------------------
+MATCH at index 10871 : /api/enrollments
+    /api/enrollments
+    ,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch enrollments
+    );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    POST
+    ,
+    /api/enrollments
+    ,{moduleId:t})).json(),onSuccess:()=>{At.invalidateQueries({queryKey:[
+>>> /api/enrollments
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r({title:
+    Enrolled successfully!
+    ,description:
+    You can now start learning this module.
+    })},onError:p=>{r({title:
+    Enrollment failed
+    ,description:p.message||
+    Please try again later.
+----------------------------------------
+MATCH at index 12543 : /api/modules
+    
+    ,lastName:e.lastName||
+    
+    ,bio:e.bio||
+    
+    })},[e,r]);const{data:o,isLoading:i}=vt({queryKey:[
+    /api/dashboard/stats
+    ]}),{data:l,isLoading:c}=vt({queryKey:[
+    /api/certifications
+    ]}),{data:u}=vt({queryKey:[
+>>> /api/modules
+    ]}),d=Oo({mutationFn:async x=>(await Fr(
+    PATCH
+    ,
+    /api/users/profile
+    ,x)).json(),onSuccess:x=>{At.setQueryData([
+    /api/auth/user
+    ],x),r.reset({firstName:x.firstName||
+    
+    ,lastName:x.lastName||
+    
+----------------------------------------
+MATCH at index 13131 : /api/projects
+    
+    ).length}function cR(e,t){const n=Math.pow(10,t);return Math.round(e*n)/n}var Lb=Eb,uR=Ob,dR=Mb,fR=Ib;const Fb=h.forwardRef(({className:e,...t},n)=>a.jsxs(Lb,{ref:n,className:de(
+    relative flex w-full touch-none select-none items-center
+    ,e),...t,children:[a.jsx(uR,{className:
+    relative h-2 w-full grow overflow-hidden rounded-full bg-secondary
+    ,children:a.jsx(dR,{className:
+    absolute h-full bg-primary
+    })}),a.jsx(fR,{className:
+    block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+    })]}));Fb.displayName=Lb.displayName;function hR(){var g;const{id:e}=hh(),{toast:t}=Os(),[n,r]=h.useState(null),{data:s,isLoading:o,error:i}=vt({queryKey:[
+>>> /api/projects
+    ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+    ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+----------------------------------------
+MATCH at index 13132 : ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    ).length}function cR(e,t){const n=Math.pow(10,t);return Math.round(e*n)/n}var Lb=Eb,uR=Ob,dR=Mb,fR=Ib;const Fb=h.forwardRef(({className:e,...t},n)=>a.jsxs(Lb,{ref:n,className:de(
+    relative flex w-full touch-none select-none items-center
+    ,e),...t,children:[a.jsx(uR,{className:
+    relative h-2 w-full grow overflow-hidden rounded-full bg-secondary
+    ,children:a.jsx(dR,{className:
+    absolute h-full bg-primary
+    })}),a.jsx(fR,{className:
+    block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+    })]}));Fb.displayName=Lb.displayName;function hR(){var g;const{id:e}=hh(),{toast:t}=Os(),[n,r]=h.useState(null),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/projects
+>>> ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+    ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+----------------------------------------
+MATCH at index 13137 : /api/modules
+    absolute h-full bg-primary
+    })}),a.jsx(fR,{className:
+    block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+    })]}));Fb.displayName=Lb.displayName;function hR(){var g;const{id:e}=hh(),{toast:t}=Os(),[n,r]=h.useState(null),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/projects
+    ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+>>> /api/modules
+    ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r(null),t({title:
+    Progress updated
+----------------------------------------
+MATCH at index 13138 : ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    })}),a.jsx(fR,{className:
+    block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50
+    })]}));Fb.displayName=Lb.displayName;function hR(){var g;const{id:e}=hh(),{toast:t}=Os(),[n,r]=h.useState(null),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/projects
+    ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+>>> ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r(null),t({title:
+    Progress updated
+    ,description:
+----------------------------------------
+MATCH at index 13141 : /api/projects
+    /api/projects
+    ,e],queryFn:async()=>{const x=await fetch(`/api/projects/${e}`,{credentials:
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+    ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+>>> /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r(null),t({title:
+    Progress updated
+    ,description:
+    Your project progress has been saved.
+    })},onError:()=>{t({title:
+    Error
+----------------------------------------
+MATCH at index 13143 : /api/projects
+    include
+    });if(!x.ok)throw new Error(
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+    ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+>>> /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),r(null),t({title:
+    Progress updated
+    ,description:
+    Your project progress has been saved.
+    })},onError:()=>{t({title:
+    Error
+    ,description:
+    Failed to update progress. Please try again.
+----------------------------------------
+MATCH at index 13156 : })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    ]}),r(null),t({title:
+    Progress updated
+    ,description:
+    Your project progress has been saved.
+    })},onError:()=>{t({title:
+    Error
+    ,description:
+    Failed to update progress. Please try again.
+    ,variant:
+    destructive
+>>> })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify({progress:100,status:
+    completed
+    })}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),t({title:
+----------------------------------------
+MATCH at index 13161 : /api/projects
+    Error
+    ,description:
+    Failed to update progress. Please try again.
+    ,variant:
+    destructive
+    })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify({progress:100,status:
+    completed
+    })}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+>>> /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+    /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),t({title:
+    Project completed
+    ,description:
+    Congratulations on completing your project!
+    })},onError:()=>{t({title:
+    Error
+----------------------------------------
+MATCH at index 13163 : /api/projects
+    Failed to update progress. Please try again.
+    ,variant:
+    destructive
+    })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify({progress:100,status:
+    completed
+    })}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+    ,e]}),At.invalidateQueries({queryKey:[
+>>> /api/projects
+    ]}),At.invalidateQueries({queryKey:[
+    /api/dashboard/stats
+    ]}),t({title:
+    Project completed
+    ,description:
+    Congratulations on completing your project!
+    })},onError:()=>{t({title:
+    Error
+    ,description:
+    Failed to update project. Please try again.
+----------------------------------------

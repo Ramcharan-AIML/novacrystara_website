@@ -1,0 +1,535 @@
+﻿MATCH FOR 'AI Agents' at index 7841:
+    })]})]})]})]}),a.jsxs(
+    div
+    ,{className:
+    absolute -bottom-4 -right-4 rounded-lg border border-border bg-card p-4 shadow-lg
+    ,children:[a.jsx(
+    p
+    ,{className:
+    text-xs text-muted-foreground
+    ,children:
+    Next Workshop
+    }),a.jsx(
+    p
+    ,{className:
+    font-medium
+    ,children:
+>>> AI Agents Deep Dive
+    }),a.jsx(
+    p
+    ,{className:
+    text-xs text-primary
+    ,children:
+    Tomorrow, 2:00 PM
+    })]})]})})]})})]})}const tE=[{icon:Vj,title:
+    Agile Methodologies
+    ,description:
+    Learn modern development practices used by top tech companies.
+    },{icon:Fl,title:
+    Data-Driven Decisions
+    ,description:
+    Master analytics and make informed business decisions.
+    },{icon:k0,title:
+--------------------------------------------------------------------------------
+MATCH FOR 'AI Agents' at index 8073:
+    ,children:e.description}),a.jsxs(
+    a
+    ,{href:
+    #
+    ,className:
+    mt-4 inline-flex items-center text-sm font-medium text-primary
+    ,children:[
+    Learn More
+    ,a.jsx(
+    span
+    ,{className:
+    ml-1 transition-transform group-hover:translate-x-1
+    ,children:
+    →
+    })]})]})]},e.title))})]})})}const iE=[{icon:yj,title:
+>>> AI Agents
+    ,level:
+    Advanced
+    ,status:
+    Enroll Now
+    },{icon:kh,title:
+    IoT
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Nh,title:
+    Multi Cloud
+    ,level:
+    Advanced
+    ,status:
+--------------------------------------------------------------------------------
+MATCH FOR 'Multi Cloud' at index 8085:
+    ,children:
+    →
+    })]})]})]},e.title))})]})})}const iE=[{icon:yj,title:
+    AI Agents
+    ,level:
+    Advanced
+    ,status:
+    Enroll Now
+    },{icon:kh,title:
+    IoT
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Nh,title:
+>>> Multi Cloud
+    ,level:
+    Advanced
+    ,status:
+    Coming Soon
+    },{icon:_j,title:
+    Data Engineering
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Cj,title:
+    Project Management
+    ,level:
+    Beginner
+    ,status:
+--------------------------------------------------------------------------------
+MATCH FOR 'Data Engineering' at index 8091:
+    ,status:
+    Enroll Now
+    },{icon:kh,title:
+    IoT
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Nh,title:
+    Multi Cloud
+    ,level:
+    Advanced
+    ,status:
+    Coming Soon
+    },{icon:_j,title:
+>>> Data Engineering
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Cj,title:
+    Project Management
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:zj,title:
+    Scrum Master
+    ,level:
+    Beginner
+    ,status:
+--------------------------------------------------------------------------------
+MATCH FOR 'Project Management' at index 8097:
+    ,status:
+    Enroll Now
+    },{icon:Nh,title:
+    Multi Cloud
+    ,level:
+    Advanced
+    ,status:
+    Coming Soon
+    },{icon:_j,title:
+    Data Engineering
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Cj,title:
+>>> Project Management
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:zj,title:
+    Scrum Master
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:bj,title:
+    Data Analytics
+    ,level:
+    Intermediate
+    ,status:
+--------------------------------------------------------------------------------
+MATCH FOR 'Scrum Master' at index 8103:
+    ,status:
+    Coming Soon
+    },{icon:_j,title:
+    Data Engineering
+    ,level:
+    Intermediate
+    ,status:
+    Enroll Now
+    },{icon:Cj,title:
+    Project Management
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:zj,title:
+>>> Scrum Master
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:bj,title:
+    Data Analytics
+    ,level:
+    Intermediate
+    ,status:
+    Coming Soon
+    }],aE={Beginner:
+    bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400
+    ,Intermediate:
+    bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400
+    ,Advanced:
+--------------------------------------------------------------------------------
+MATCH FOR 'Data Analytics' at index 8109:
+    ,status:
+    Enroll Now
+    },{icon:Cj,title:
+    Project Management
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:zj,title:
+    Scrum Master
+    ,level:
+    Beginner
+    ,status:
+    Enroll Now
+    },{icon:bj,title:
+>>> Data Analytics
+    ,level:
+    Intermediate
+    ,status:
+    Coming Soon
+    }],aE={Beginner:
+    bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400
+    ,Intermediate:
+    bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400
+    ,Advanced:
+    bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400
+    };function lE(){return a.jsx(
+    section
+    ,{id:
+    technology
+    ,className:
+--------------------------------------------------------------------------------
+MATCH FOR 'AI Agents' at index 8334:
+    ,u),o.removeEventListener(
+    error
+    ,d)}},[o,n,t]),i}function pE(){return()=>{}}function mE(){return h.useSyncExternalStore(pE,()=>!0,()=>!1)}var w1=m1,b1=v1,S1=x1;const Ac=h.forwardRef(({className:e,...t},n)=>a.jsx(w1,{ref:n,className:de(`
+      after:content-[''] after:block after:absolute after:inset-0 after:rounded-full after:pointer-events-none after:border after:border-black/10 dark:after:border-white/10
+      relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full`,e),...t}));Ac.displayName=w1.displayName;const zh=h.forwardRef(({className:e,...t},n)=>a.jsx(b1,{ref:n,className:de(
+    aspect-square h-full w-full
+    ,e),...t}));zh.displayName=b1.displayName;const Oc=h.forwardRef(({className:e,...t},n)=>a.jsx(S1,{ref:n,className:de(
+    flex h-full w-full items-center justify-center rounded-full bg-muted
+    ,e),...t}));Oc.displayName=S1.displayName;const gE=[{name:
+    Sarah Chen
+    ,role:
+    AI Engineer at TechCorp
+    ,initials:
+    SC
+    ,quote:
+    The hands-on projects gave me the confidence to excel in my interviews. I landed my dream job within weeks of completing the program.
+    ,skills:[
+>>> AI Agents
+    ,
+    Data Engineering
+    ]},{name:
+    Marcus Johnson
+    ,role:
+    Startup Founder
+    ,initials:
+    MJ
+    ,quote:
+    The Innovator Visa support was invaluable. They helped me develop a solid business model and navigate the application process successfully.
+    ,skills:[
+    Business Model
+    ,
+    Scrum Master
+    ]},{name:
+--------------------------------------------------------------------------------
+MATCH FOR 'Data Engineering' at index 8336:
+    ,d)}},[o,n,t]),i}function pE(){return()=>{}}function mE(){return h.useSyncExternalStore(pE,()=>!0,()=>!1)}var w1=m1,b1=v1,S1=x1;const Ac=h.forwardRef(({className:e,...t},n)=>a.jsx(w1,{ref:n,className:de(`
+      after:content-[''] after:block after:absolute after:inset-0 after:rounded-full after:pointer-events-none after:border after:border-black/10 dark:after:border-white/10
+      relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full`,e),...t}));Ac.displayName=w1.displayName;const zh=h.forwardRef(({className:e,...t},n)=>a.jsx(b1,{ref:n,className:de(
+    aspect-square h-full w-full
+    ,e),...t}));zh.displayName=b1.displayName;const Oc=h.forwardRef(({className:e,...t},n)=>a.jsx(S1,{ref:n,className:de(
+    flex h-full w-full items-center justify-center rounded-full bg-muted
+    ,e),...t}));Oc.displayName=S1.displayName;const gE=[{name:
+    Sarah Chen
+    ,role:
+    AI Engineer at TechCorp
+    ,initials:
+    SC
+    ,quote:
+    The hands-on projects gave me the confidence to excel in my interviews. I landed my dream job within weeks of completing the program.
+    ,skills:[
+    AI Agents
+    ,
+>>> Data Engineering
+    ]},{name:
+    Marcus Johnson
+    ,role:
+    Startup Founder
+    ,initials:
+    MJ
+    ,quote:
+    The Innovator Visa support was invaluable. They helped me develop a solid business model and navigate the application process successfully.
+    ,skills:[
+    Business Model
+    ,
+    Scrum Master
+    ]},{name:
+    Priya Patel
+    ,role:
+--------------------------------------------------------------------------------
+MATCH FOR 'Scrum Master' at index 8348:
+    ,skills:[
+    AI Agents
+    ,
+    Data Engineering
+    ]},{name:
+    Marcus Johnson
+    ,role:
+    Startup Founder
+    ,initials:
+    MJ
+    ,quote:
+    The Innovator Visa support was invaluable. They helped me develop a solid business model and navigate the application process successfully.
+    ,skills:[
+    Business Model
+    ,
+>>> Scrum Master
+    ]},{name:
+    Priya Patel
+    ,role:
+    Cloud Architect
+    ,initials:
+    PP
+    ,quote:
+    Learning from industry experts while working on real projects was exactly what I needed to transition into tech. Highly recommend!
+    ,skills:[
+    Multi Cloud
+    ,
+    IoT
+    ]},{name:
+    Alex Rivera
+    ,role:
+--------------------------------------------------------------------------------
+MATCH FOR 'Multi Cloud' at index 8358:
+    ,quote:
+    The Innovator Visa support was invaluable. They helped me develop a solid business model and navigate the application process successfully.
+    ,skills:[
+    Business Model
+    ,
+    Scrum Master
+    ]},{name:
+    Priya Patel
+    ,role:
+    Cloud Architect
+    ,initials:
+    PP
+    ,quote:
+    Learning from industry experts while working on real projects was exactly what I needed to transition into tech. Highly recommend!
+    ,skills:[
+>>> Multi Cloud
+    ,
+    IoT
+    ]},{name:
+    Alex Rivera
+    ,role:
+    Data Analyst
+    ,initials:
+    AR
+    ,quote:
+    The AI-powered learning path adapted to my schedule perfectly. I could learn at my own pace while still hitting all my milestones.
+    ,skills:[
+    Data Analytics
+    ,
+    PM
+    ]}];function vE(){return a.jsx(
+--------------------------------------------------------------------------------
+MATCH FOR 'Data Analytics' at index 8370:
+    ,quote:
+    Learning from industry experts while working on real projects was exactly what I needed to transition into tech. Highly recommend!
+    ,skills:[
+    Multi Cloud
+    ,
+    IoT
+    ]},{name:
+    Alex Rivera
+    ,role:
+    Data Analyst
+    ,initials:
+    AR
+    ,quote:
+    The AI-powered learning path adapted to my schedule perfectly. I could learn at my own pace while still hitting all my milestones.
+    ,skills:[
+>>> Data Analytics
+    ,
+    PM
+    ]}];function vE(){return a.jsx(
+    section
+    ,{className:
+    py-20
+    ,children:a.jsxs(
+    div
+    ,{className:
+    mx-auto max-w-7xl px-6
+    ,children:[a.jsxs(
+    div
+    ,{className:
+    mb-12 text-center
+    ,children:[a.jsx(tt,{variant:
+--------------------------------------------------------------------------------
+MATCH FOR 'AI Agents' at index 10657:
+    ,children:
+    View Credential
+    })})]})]})},N.id))}):a.jsxs(
+    div
+    ,{className:
+    text-center py-8
+    ,children:[a.jsx(Kn,{className:
+    h-12 w-12 mx-auto text-muted-foreground/50 mb-3
+    }),a.jsx(
+    p
+    ,{className:
+    text-muted-foreground
+    ,children:
+    Complete modules to earn certifications
+    })]})})]})]})]})]})}const pg={
+>>> AI Agents
+    :kh,IoT:jh,
+    Multi Cloud
+    :Nh,default:jc},UT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function BT(){return a.jsxs(Ee,{children:[a.jsxs(yt,{children:[a.jsx(Ie,{className:
+    h-6 w-3/4
+    }),a.jsx(Ie,{className:
+    h-4 w-1/2 mt-2
+    })]}),a.jsxs(Re,{children:[a.jsx(Ie,{className:
+    h-16 w-full
+    }),a.jsxs(
+--------------------------------------------------------------------------------
+MATCH FOR 'Multi Cloud' at index 10659:
+    })})]})]})},N.id))}):a.jsxs(
+    div
+    ,{className:
+    text-center py-8
+    ,children:[a.jsx(Kn,{className:
+    h-12 w-12 mx-auto text-muted-foreground/50 mb-3
+    }),a.jsx(
+    p
+    ,{className:
+    text-muted-foreground
+    ,children:
+    Complete modules to earn certifications
+    })]})})]})]})]})]})}const pg={
+    AI Agents
+    :kh,IoT:jh,
+>>> Multi Cloud
+    :Nh,default:jc},UT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function BT(){return a.jsxs(Ee,{children:[a.jsxs(yt,{children:[a.jsx(Ie,{className:
+    h-6 w-3/4
+    }),a.jsx(Ie,{className:
+    h-4 w-1/2 mt-2
+    })]}),a.jsxs(Re,{children:[a.jsx(Ie,{className:
+    h-16 w-full
+    }),a.jsxs(
+    div
+    ,{className:
+--------------------------------------------------------------------------------
+MATCH FOR 'AI Agents' at index 10843:
+    }),a.jsxs(
+    div
+    ,{className:
+    flex items-center gap-2 flex-wrap
+    ,children:[a.jsx(tt,{className:o,
+    data-testid
+    :`badge-level-${r.id}`,children:r.level}),r.duration&&a.jsxs(
+    div
+    ,{className:
+    flex items-center gap-1 text-xs text-muted-foreground
+    ,children:[a.jsx(fa,{className:
+    h-3 w-3
+    }),a.jsx(
+    span
+    ,{children:r.duration})]})]})]})]})},r.id)})})]})]})}const mg={
+>>> AI Agents
+    :kh,IoT:jh,
+    Multi Cloud
+    :Nh,default:jc},HT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/modules
+    ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+--------------------------------------------------------------------------------
+MATCH FOR 'Multi Cloud' at index 10845:
+    ,{className:
+    flex items-center gap-2 flex-wrap
+    ,children:[a.jsx(tt,{className:o,
+    data-testid
+    :`badge-level-${r.id}`,children:r.level}),r.duration&&a.jsxs(
+    div
+    ,{className:
+    flex items-center gap-1 text-xs text-muted-foreground
+    ,children:[a.jsx(fa,{className:
+    h-3 w-3
+    }),a.jsx(
+    span
+    ,{children:r.duration})]})]})]})]})},r.id)})})]})]})}const mg={
+    AI Agents
+    :kh,IoT:jh,
+>>> Multi Cloud
+    :Nh,default:jc},HT={Beginner:
+    bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200
+    ,Intermediate:
+    bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200
+    ,Advanced:
+    bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200
+    };function KT(){const t=hh().id,{user:n}=$h(),{toast:r}=Os(),{data:s,isLoading:o,error:i}=vt({queryKey:[
+    /api/modules
+    ,t],queryFn:async()=>{const p=await fetch(`/api/modules/${t}`,{credentials:
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch module
+    );return p.json()}}),{data:l}=vt({queryKey:[
+    /api/enrollments
+    ],queryFn:async()=>{const p=await fetch(
+--------------------------------------------------------------------------------
+=== TESTIMONIALS & OTHER REVIEWS ===
+The hands-on projects gave me the confidence to excel in my interviews. I landed my dream job within weeks of completing the program.
+Hear From Our Alumni

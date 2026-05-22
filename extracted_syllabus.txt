@@ -1,0 +1,12 @@
+﻿Index 8332 (133 chars): The hands-on projects gave me the confidence to excel in my interviews. I landed my dream job within weeks of completing the program.
+   [8327]: ,role:
+   [8328]: AI Engineer at TechCorp
+   [8329]: ,initials:
+   [8330]: SC
+   [8331]: ,quote:
+   [8333]: ,skills:[
+   [8334]: AI Agents
+   [8335]: ,
+   [8336]: Data Engineering
+   [8337]: ]},{name:
+----------------------------------------

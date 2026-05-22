@@ -1,0 +1,288 @@
+﻿Index 194 : forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported
+    )V=function(){m(M)};else if(typeof MessageChannel<
+    u
+    ){var I=new MessageChannel,ee=I.port2;I.port1.onmessage=M,V=function(){ee.postMessage(null)}}else V=function(){x(M,0)};function W(R){_=R,E||(E=!0,V())}function X(R,z){N=x(function(){R(e.unstable_now())},z)}e.unstable_IdlePriority=5,e.unstable_ImmediatePriority=1,e.unstable_LowPriority=4,e.unstable_NormalPriority=3,e.unstable_Profiling=null,e.unstable_UserBlockingPriority=2,e.unstable_cancelCallback=function(R){R.callback=null},e.unstable_continueExecution=function(){b||w||(b=!0,W(k))},e.unstable_forceFrameRate=function(R){0>R||125<R?console.error(
+>>> forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported
+    ):T=0<R?Math.floor(1e3/R):5},e.unstable_getCurrentPriorityLevel=function(){return p},e.unstable_getFirstCallbackNode=function(){return n(c)},e.unstable_next=function(R){switch(p){case 1:case 2:case 3:var z=3;break;default:z=p}var G=p;p=z;try{return R()}finally{p=G}},e.unstable_pauseExecution=function(){},e.unstable_requestPaint=function(){},e.unstable_runWithPriority=function(R,z){switch(R){case 1:case 2:case 3:case 4:case 5:break;default:R=3}var G=p;p=R;try{return z()}finally{p=G}},e.unstable_scheduleCallback=function(R,z,G){var oe=e.unstable_now();switch(typeof G==
+    object
+    &&G!==null?(G=G.delay,G=typeof G==
+----------------------------------------
+Index 464 : Fragment
+    )return e.displayName||e.name||null;if(typeof e==
+    string
+    )return e;switch(e){case Us:return
+>>> Fragment
+    ;case $s:return
+    Portal
+    ;case zu:return
+----------------------------------------
+Index 508 : DehydratedFragment
+    )+
+    .Provider
+    ;case 18:return
+>>> DehydratedFragment
+    ;case 11:return e=t.render,e=e.displayName||e.name||
+    
+    ,t.displayName||(e!==
+----------------------------------------
+Index 520 : Fragment
+    :
+    ForwardRef
+    );case 7:return
+>>> Fragment
+    ;case 5:return t;case 4:return
+    Portal
+    ;case 3:return
+----------------------------------------
+Index 1777 : &&o!==null?s.context=sn(o):(o=It(t)?ys:xt.current,s.context=Co(e,o)),s.state=e.memoizedState,o=t.getDerivedStateFromProps,typeof o==
+    function
+    &&t.UNSAFE_componentWillReceiveProps(n,r),t.state!==e&&fc.enqueueReplaceState(t,t.state,null)}function md(e,t,n,r){var s=e.stateNode;s.props=n,s.state=e.memoizedState,s.refs={},Wf(e);var o=t.contextType;typeof o==
+    object
+>>> &&o!==null?s.context=sn(o):(o=It(t)?ys:xt.current,s.context=Co(e,o)),s.state=e.memoizedState,o=t.getDerivedStateFromProps,typeof o==
+    function
+    &&(pd(e,t,o,n),s.state=e.memoizedState),typeof t.getDerivedStateFromProps==
+    function
+----------------------------------------
+Index 1779 : &&(pd(e,t,o,n),s.state=e.memoizedState),typeof t.getDerivedStateFromProps==
+    object
+    &&o!==null?s.context=sn(o):(o=It(t)?ys:xt.current,s.context=Co(e,o)),s.state=e.memoizedState,o=t.getDerivedStateFromProps,typeof o==
+    function
+>>> &&(pd(e,t,o,n),s.state=e.memoizedState),typeof t.getDerivedStateFromProps==
+    function
+    ||typeof s.getSnapshotBeforeUpdate==
+    function
+----------------------------------------
+Index 1811 : &&u!==null?u=sn(u):(u=It(n)?ys:xt.current,u=Co(t,u));var d=n.getDerivedStateFromProps,f=typeof d==
+    hidden
+    )if(!(t.mode&1))t.memoizedState={baseLanes:0,cachePool:null,transitions:null},Ae(Xs,$t),$t|=n;else{if(!(n&1073741824))return e=o!==null?o.baseLanes|n:n,t.lanes=t.childLanes=1073741824,t.memoizedState={baseLanes:e,cachePool:null,transitions:null},t.updateQueue=null,Ae(Xs,$t),$t|=e,null;t.memoizedState={baseLanes:0,cachePool:null,transitions:null},r=o!==null?o.baseLanes:n,Ae(Xs,$t),$t|=r}else o!==null?(r=o.baseLanes|n,t.memoizedState=null):r=n,Ae(Xs,$t),$t|=r;return kt(e,t,s,n),t.child}function Wy(e,t){var n=t.ref;(e===null&&n!==null||e!==null&&e.ref!==n)&&(t.flags|=512,t.flags|=2097152)}function vd(e,t,n,r,s){var o=It(n)?ys:xt.current;return o=Co(t,o),ro(t,s),n=Gf(e,t,n,r,o,s),r=qf(),e!==null&&!Ot?(t.updateQueue=e.updateQueue,t.flags&=-2053,e.lanes&=~s,Xn(e,t,s)):(Le&&r&&Lf(t),t.flags|=1,kt(e,t,n,s),t.child)}function rm(e,t,n,r,s){if(It(n)){var o=!0;bl(t)}else o=!1;if(ro(t,s),t.stateNode===null)qa(e,t),zy(t,n,r),md(t,n,r,s),r=!0;else if(e===null){var i=t.stateNode,l=t.memoizedProps;i.props=l;var c=i.context,u=n.contextType;typeof u==
+    object
+>>> &&u!==null?u=sn(u):(u=It(n)?ys:xt.current,u=Co(t,u));var d=n.getDerivedStateFromProps,f=typeof d==
+    function
+    ||typeof i.getSnapshotBeforeUpdate==
+    function
+----------------------------------------
+Index 1837 : &&c!==null?c=sn(c):(c=It(n)?ys:xt.current,c=Co(t,c));var w=n.getDerivedStateFromProps;(d=typeof w==
+    function
+    &&(t.flags|=4194308),r=!1)}else{i=t.stateNode,yy(e,t),l=t.memoizedProps,u=t.type===t.elementType?l:un(t.type,l),i.props=u,f=t.pendingProps,p=i.context,c=n.contextType,typeof c==
+    object
+>>> &&c!==null?c=sn(c):(c=It(n)?ys:xt.current,c=Co(t,c));var w=n.getDerivedStateFromProps;(d=typeof w==
+    function
+    ||typeof i.getSnapshotBeforeUpdate==
+    function
+----------------------------------------
+Index 2762 : );function Tk(e){const t=({children:n})=>a.jsx(a.Fragment,{children:n});return t.displayName=`${e}.Slottable`,t.__radixId=Bx,t}function Rk(e){return h.isValidElement(e)&&typeof e.type==
+    Slot
+    );function Pk(e){const t=h.forwardRef((n,r)=>{const{children:s,...o}=n;if(h.isValidElement(s)){const i=Ok(s),l=Ak(o,s.props);return s.type!==h.Fragment&&(l.ref=r?$x(r,i):i),h.cloneElement(s,l)}return h.Children.count(s)>1?h.Children.only(null):null});return t.displayName=`${e}.SlotClone`,t}var Bx=Symbol(
+    radix.slottable
+>>> );function Tk(e){const t=({children:n})=>a.jsx(a.Fragment,{children:n});return t.displayName=`${e}.Slottable`,t.__radixId=Bx,t}function Rk(e){return h.isValidElement(e)&&typeof e.type==
+    function
+    &&
+    __radixId
+----------------------------------------
+Index 3038 : },children:[b&&a.jsx(Qd,{ref:u,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    {hotkey}
+    ,w),tabIndex:-1,style:{pointerEvents:b?void 0:
+    none
+>>> },children:[b&&a.jsx(Qd,{ref:u,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    forwards
+    });Nu(x)}}),a.jsx(bh.Slot,{scope:n,children:a.jsx(ce.ol,{tabIndex:-1,...o,ref:p})}),b&&a.jsx(Qd,{ref:d,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    backwards
+----------------------------------------
+Index 3040 : });Nu(x)}}),a.jsx(bh.Slot,{scope:n,children:a.jsx(ce.ol,{tabIndex:-1,...o,ref:p})}),b&&a.jsx(Qd,{ref:d,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    none
+    },children:[b&&a.jsx(Qd,{ref:u,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    forwards
+>>> });Nu(x)}}),a.jsx(bh.Slot,{scope:n,children:a.jsx(ce.ol,{tabIndex:-1,...o,ref:p})}),b&&a.jsx(Qd,{ref:d,onFocusFromOutsideViewport:()=>{const x=g({tabbingDirection:
+    backwards
+    });Nu(x)}})]})});Yx.displayName=qx;var Xx=
+    ToastFocusProxy
+----------------------------------------
+Index 3044 : ,Qd=h.forwardRef((e,t)=>{const{__scopeToast:n,onFocusFromOutsideViewport:r,...s}=e,o=Sc(Xx,n);return a.jsx(da,{
+    backwards
+    });Nu(x)}})]})});Yx.displayName=qx;var Xx=
+    ToastFocusProxy
+>>> ,Qd=h.forwardRef((e,t)=>{const{__scopeToast:n,onFocusFromOutsideViewport:r,...s}=e,o=Sc(Xx,n);return a.jsx(da,{
+    aria-hidden
+    :!0,tabIndex:0,...s,ref:t,style:{position:
+    fixed
+----------------------------------------
+Index 6803 : ,animationFrame:c=!1}=r,u=Oh(e),d=s||o?[...u?Yi(u):[],...Yi(t)]:[];d.forEach(v=>{s&&v.addEventListener(
+    function
+    ,layoutShift:l=typeof IntersectionObserver==
+    function
+>>> ,animationFrame:c=!1}=r,u=Oh(e),d=s||o?[...u?Yi(u):[],...Yi(t)]:[];d.forEach(v=>{s&&v.addEventListener(
+    scroll
+    ,n,{passive:!0}),o&&v.addEventListener(
+    resize
+----------------------------------------
+Index 6877 : ,placement:T,whileElementsMounted:(...wt)=>o_(...wt,{animationFrame:w===
+    number
+    ?d:{top:0,right:0,bottom:0,left:0,...d},L=Array.isArray(u)?u:[u],M=L.length>0,V={padding:O,boundary:L.filter(E_),altBoundary:M},{refs:I,floatingStyles:ee,placement:W,isPositioned:X,middlewareData:R}=h_({strategy:
+    fixed
+>>> ,placement:T,whileElementsMounted:(...wt)=>o_(...wt,{animationFrame:w===
+    always
+    }),elements:{reference:x.anchor},middleware:[m_({mainAxis:s+N,alignmentAxis:i}),c&&g_({mainAxis:!0,crossAxis:!1,limiter:f===
+    partial
+----------------------------------------
+Index 8396 : Hear From Our Alumni
+    ,{className:
+    mb-4 text-3xl font-bold sm:text-4xl
+    ,children:
+>>> Hear From Our Alumni
+    }),a.jsx(
+    p
+    ,{className:
+----------------------------------------
+Index 8466 : });return}l(S),u(null)},g=async()=>{if(i){f(!0);try{const y=await Fr(
+    Please upload a file smaller than 10MB
+    ,variant:
+    destructive
+>>> });return}l(S),u(null)},g=async()=>{if(i){f(!0);try{const y=await Fr(
+    POST
+    ,
+    /api/objects/upload
+----------------------------------------
+Index 8476 : }});const k=await Fr(
+    Content-Type
+    :i.type||
+    application/octet-stream
+>>> }});const k=await Fr(
+    PUT
+    ,
+    /api/objects/finalize
+----------------------------------------
+Index 8494 : )},v=Oo({mutationFn:async y=>Fr(
+    destructive
+    })}finally{f(!1)}}},x=()=>{l(null),u(null),p.current&&(p.current.value=
+    
+>>> )},v=Oo({mutationFn:async y=>Fr(
+    POST
+    ,
+    /api/registrations
+----------------------------------------
+Index 9060 : ),s.fillStyle=O,s.fillRect(0,T-1,o,2)}t.current=requestAnimationFrame(m)}m();const y=()=>{o=window.innerWidth,i=window.innerHeight,r.width=o,r.height=i};return window.addEventListener(
+    transparent
+    ),O.addColorStop(.2,`hsla(190,100%,60%,${_})`),O.addColorStop(.5,`hsla(190,100%,70%,${_*2})`),O.addColorStop(.8,`hsla(190,100%,60%,${_})`),O.addColorStop(1,
+    transparent
+>>> ),s.fillStyle=O,s.fillRect(0,T-1,o,2)}t.current=requestAnimationFrame(m)}m();const y=()=>{o=window.innerWidth,i=window.innerHeight,r.width=o,r.height=i};return window.addEventListener(
+    resize
+    ,y),()=>{cancelAnimationFrame(t.current),window.removeEventListener(
+    resize
+----------------------------------------
+Index 9062 : ,y),()=>{cancelAnimationFrame(t.current),window.removeEventListener(
+    transparent
+    ),s.fillStyle=O,s.fillRect(0,T-1,o,2)}t.current=requestAnimationFrame(m)}m();const y=()=>{o=window.innerWidth,i=window.innerHeight,r.width=o,r.height=i};return window.addEventListener(
+    resize
+>>> ,y),()=>{cancelAnimationFrame(t.current),window.removeEventListener(
+    resize
+    ,y)}},[]);const n=h.useMemo(()=>Array.from({length:8},(r,s)=>({id:s,left:`${8+s*13}%`,top:`${Math.sin(s*1.3)*30+40}%`,size:40+s%3*20,delay:`${s*1.2}s`,duration:`${10+s*2}s`})),[]);return a.jsxs(
+    div
+----------------------------------------
+Index 9498 : :Gh(l.open),...i,ref:u,onDismiss:()=>l.onOpenChange(!1)})}),a.jsxs(a.Fragment,{children:[a.jsx(YP,{titleId:l.titleId}),a.jsx(JP,{contentRef:c,descriptionId:l.descriptionId})]})]})}),Zh=
+    aria-labelledby
+    :l.titleId,
+    data-state
+>>> :Gh(l.open),...i,ref:u,onDismiss:()=>l.onOpenChange(!1)})}),a.jsxs(a.Fragment,{children:[a.jsx(YP,{titleId:l.titleId}),a.jsx(JP,{contentRef:c,descriptionId:l.descriptionId})]})]})}),Zh=
+    DialogTitle
+    ,J1=h.forwardRef((e,t)=>{const{__scopeDialog:n,...r}=e,s=Sn(Zh,n);return a.jsx(ce.h2,{id:s.titleId,...r,ref:t})});J1.displayName=Zh;var ew=
+    DialogDescription
+----------------------------------------
+Index 9636 : },children:Bw(c.value)?a.jsx(a.Fragment,{children:i}):o})});Nw.displayName=Sw;var gT=
+    
+    ,...l}=e,c=Xr(Sw,n),{onValueNodeHasChildrenChange:u}=c,d=o!==void 0,f=Ce(t,c.onValueNodeChange);return nt(()=>{u(d)},[u,d]),a.jsx(ce.span,{...l,ref:f,style:{pointerEvents:
+    none
+>>> },children:Bw(c.value)?a.jsx(a.Fragment,{children:i}):o})});Nw.displayName=Sw;var gT=
+    SelectIcon
+    ,kw=h.forwardRef((e,t)=>{const{__scopeSelect:n,children:r,...s}=e;return a.jsx(ce.span,{
+    aria-hidden
+----------------------------------------
+Index 9772 : ,Tw=h.forwardRef((e,t)=>{const{__scopeSelect:n,nonce:r,...s}=e,o=Jr(nf,n),i=Yh(nf,n),l=Ce(t,o.onViewportChange),c=h.useRef(0);return a.jsxs(a.Fragment,{children:[a.jsx(
+    var(--radix-popper-anchor-height)
+    }})});tf.displayName=bT;var[ST,Yh]=Yo(Es,{}),nf=
+    SelectViewport
+>>> ,Tw=h.forwardRef((e,t)=>{const{__scopeSelect:n,nonce:r,...s}=e,o=Jr(nf,n),i=Yh(nf,n),l=Ce(t,o.onViewportChange),c=h.useRef(0);return a.jsxs(a.Fragment,{children:[a.jsx(
+    style
+    ,{dangerouslySetInnerHTML:{__html:
+    [data-radix-select-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-select-viewport]::-webkit-scrollbar{display:none}
+----------------------------------------
+Index 9946 : ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+    /api/enrollments
+    ]}),{data:f}=vt({queryKey:[
+    /api/modules
+>>> ]}),p=d==null?void 0:d.map(g=>{const x=f==null?void 0:f.find(v=>v.id===g.moduleId);return{enrollmentId:g.id,module:x}}).filter(g=>g.module),w=Oo({mutationFn:async g=>Fr(
+    /api/projects
+    ,{method:
+    POST
+----------------------------------------
+Index 10236 : })]})},T)):a.jsxs(a.Fragment,{children:[a.jsx(Ee,{
+    h-4 w-24 mb-2
+    }),a.jsx(Ie,{className:
+    h-8 w-16
+>>> })]})},T)):a.jsxs(a.Fragment,{children:[a.jsx(Ee,{
+    data-testid
+    :
+    card-stat-modules
+----------------------------------------
+Index 10866 : );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    include
+    });if(!p.ok)throw new Error(
+    Failed to fetch enrollments
+>>> );return p.json()},enabled:!!n}),c=l==null?void 0:l.find(p=>p.moduleId===t),u=Oo({mutationFn:async()=>(await Fr(
+    POST
+    ,
+    /api/enrollments
+----------------------------------------
+Index 11258 : ,children:u.isPending?a.jsxs(a.Fragment,{children:[a.jsx(
+    data-testid
+    :
+    button-enroll
+>>> ,children:u.isPending?a.jsxs(a.Fragment,{children:[a.jsx(
+    div
+    ,{className:
+    h-4 w-4 mr-2 animate-spin rounded-full border-2 border-current border-t-transparent
+----------------------------------------
+Index 11264 : ]}):a.jsxs(a.Fragment,{children:[a.jsx(vs,{className:
+    h-4 w-4 mr-2 animate-spin rounded-full border-2 border-current border-t-transparent
+    }),
+    Enrolling...
+>>> ]}):a.jsxs(a.Fragment,{children:[a.jsx(vs,{className:
+    h-4 w-4 mr-2
+    }),
+    Enroll Now
+----------------------------------------
+Index 12544 : ]}),d=Oo({mutationFn:async x=>(await Fr(
+    /api/certifications
+    ]}),{data:u}=vt({queryKey:[
+    /api/modules
+>>> ]}),d=Oo({mutationFn:async x=>(await Fr(
+    PATCH
+    ,
+    /api/users/profile
+----------------------------------------
+Index 12760 : },v)):a.jsxs(a.Fragment,{children:[a.jsx(Ee,{
+    grid gap-6 sm:grid-cols-3 mb-8
+    ,children:i?Array(3).fill(0).map((x,v)=>a.jsx(Ie,{className:
+    h-24
+>>> },v)):a.jsxs(a.Fragment,{children:[a.jsx(Ee,{
+    data-testid
+    :
+    stat-modules
+----------------------------------------
+Index 13138 : ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    Failed to fetch project
+    );return x.json()}}),{data:l}=vt({queryKey:[
+    /api/modules
+>>> ]}),c=s!=null&&s.moduleId?l==null?void 0:l.find(x=>x.id===s.moduleId):null,u=Oo({mutationFn:async x=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify(x)}),onSuccess:()=>{At.invalidateQueries({queryKey:[
+    /api/projects
+----------------------------------------
+Index 13156 : })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    Failed to update progress. Please try again.
+    ,variant:
+    destructive
+>>> })}}),d=Oo({mutationFn:async()=>Fr(`/api/projects/${e}`,{method:
+    PATCH
+    ,body:JSON.stringify({progress:100,status:
+    completed
+----------------------------------------
