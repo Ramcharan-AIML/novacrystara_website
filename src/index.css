@@ -8,7 +8,11 @@
   }
   html.light body {
     @apply bg-slate-50 text-slate-900 selection:bg-sky-500/20 selection:text-sky-950;
-    background-image: url('./assets/light_back_image.png') !important;
+    background-image: 
+      radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 88% 82%, rgba(127, 0, 255, 0.07) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(253, 186, 116, 0.05) 0%, transparent 60%),
+      linear-gradient(to bottom, #f8fafc, #f1f5f9) !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -156,8 +160,7 @@ html.light body {
     radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 88% 82%, rgba(127, 0, 255, 0.07) 0%, transparent 45%),
     radial-gradient(circle at 50% 50%, rgba(253, 186, 116, 0.05) 0%, transparent 60%),
-    linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
-    url('./assets/light_back_image.png') !important;
+    linear-gradient(to bottom, #f8fafc, #f1f5f9) !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
@@ -368,10 +371,8 @@ html.light .bg-slate-950 {
 
 /* Custom hero background trace image replacement */
 html.light .hero-bg-image {
-  background-image: 
-    /* linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)), */
-    url('./assets/light_back_image.png') !important;
-  opacity: 0.5 !important;
+  opacity: 0.12 !important;
+  filter: brightness(1.2) contrast(0.9) !important;
 }
 
 html.light .bg-slate-900\/60 { background-color: rgba(255, 255, 255, 0.65) !important; }

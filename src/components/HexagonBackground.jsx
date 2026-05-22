@@ -63,6 +63,13 @@ export default function HexagonBackground() {
       ctx.fillStyle = bgGrad;
       ctx.fillRect(0, 0, width, height);
 
+      // In light mode, maintain an ultra-clean, quiet, and professional theme
+      // by disabling all grids, floating nodes, and animating connectivity lines.
+      if (isLight) {
+        animationFrameId = requestAnimationFrame(draw);
+        return;
+      }
+
       // Draw faint cyber grid lines
       ctx.strokeStyle = isLight ? 'rgba(29, 78, 216, 0.18)' : 'rgba(0, 242, 254, 0.015)';
       ctx.lineWidth = isLight ? 1.2 : 1;
@@ -147,7 +154,7 @@ export default function HexagonBackground() {
       return (
         <div
           key={idx}
-          className="absolute opacity-[0.06] pointer-events-none animate-float-slow"
+          className="absolute opacity-[0.06] pointer-events-none animate-float-slow dark:block hidden"
           style={{
             left,
             top,

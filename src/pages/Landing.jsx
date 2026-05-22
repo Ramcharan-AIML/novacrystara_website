@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 import heroBgImg from '../assets/hero_bg.png';
 import logoImg from '../assets/logo.png';
-import Main_logo from '../assets/Main_logo.png'
+import Main_logo from '../assets/Main_logo-removebg-preview.png'
 
 // Testimonials data extracted from index.js
 const TESTIMONIALS = [
