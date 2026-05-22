@@ -15,7 +15,16 @@ import {
   UserCheck,
   ChevronRight,
   HelpCircle,
-  FileText
+  FileText,
+  Zap,
+  Target,
+  Shield,
+  Globe,
+  GraduationCap,
+  Brain,
+  Briefcase,
+  Lightbulb,
+  Award
 } from 'lucide-react';
 import heroBgImg from '../assets/hero_bg.png';
 import logoImg from '../assets/logo.png';
@@ -239,7 +248,7 @@ export default function Landing() {
       <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 border-b border-slate-900">
         
         {/* Background Trace Graphic */}
-        <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-30" style={{ backgroundImage: `url(${heroBgImg})` }}></div>
+        <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-30 hero-bg-image" style={{ backgroundImage: `url(${heroBgImg})` }}></div>
         <div className="absolute inset-0 -z-10 bg-slate-950/65"></div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
@@ -321,50 +330,239 @@ export default function Landing() {
       <section id="why-us" className="py-20 border-b border-slate-900 bg-slate-950/45">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-xs font-bold text-cyber-cyan uppercase font-cyber tracking-widest">
-              Core Ecosystem
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-900/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 font-cyber tracking-wider mb-4">
+              Modern Business Model Development
             </span>
-            <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-white mt-2">
-              Why Choose NovaCrystara?
+            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white mt-2">
+              Why Choose NovaCrystara
             </h2>
-            <p className="mx-auto max-w-xl text-slate-400 mt-3 text-sm">
-              We provide state-of-the-art tooling and customized support models that empower developers to become autonomous creators.
+            <p className="mx-auto max-w-2xl text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base leading-relaxed">
+              We combine cutting-edge technology with proven methodologies to deliver results that matter.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Card 1 */}
-            <div className="p-6 rounded-xl cyber-glass hover-elevate text-left">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan mb-4">
-                <Cpu className="h-5 w-5" />
+            {/* Card 1: Agile Methodologies */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                <Zap className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">AI-Powered Sprints</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Work along custom adaptive pipelines that mold to your experience. Maximize learning speeds while constructing complex tech nodes.
-              </p>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Agile Methodologies</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Learn modern development practices used by top tech companies.
+                </p>
+              </div>
             </div>
 
-            {/* Card 2 */}
-            <div className="p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple mb-4">
-                <TrendingUp className="h-5 w-5" />
+            {/* Card 2: Data-Driven Decisions */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                <Target className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Become an Entrepreneur</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Direct integration with UK Innovator Visa endorsers. We help you design scalable business templates and secure key venture partnerships.
-              </p>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Data-Driven Decisions</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Master analytics and make informed business decisions.
+                </p>
+              </div>
             </div>
 
-            {/* Card 3 */}
-            <div className="p-6 rounded-xl cyber-glass hover-elevate text-left">
-              <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan mb-4">
-                <Users className="h-5 w-5" />
+            {/* Card 3: Scalable Startups */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                <TrendingUp className="h-6 w-6" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Team Architect Support</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Uncompromising guidance from real-world developers. Never hit walls; complete every sprint and capstone milestones flawlessly.
-              </p>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Scalable Startups</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Build products that can grow from zero to millions of users.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4: 100% Work Confidence */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                <Shield className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">100% Work Confidence</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Graduate job-ready with practical experience under your belt.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 5: Real-Time Projects */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                <Clock className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Real-Time Projects</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Work on live projects with actual users and feedback.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 6: Global Network */}
+            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+              <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                <Globe className="h-6 w-6" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-white mb-2">Global Network</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Connect with professionals and peers from around the world.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 EVERYTHING YOU NEED TO SUCCEED */}
+      <section id="succeed" className="py-20 border-b border-slate-900 bg-slate-950/20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white">
+              Everything You Need to Succeed
+            </h2>
+            <p className="mx-auto max-w-3xl text-slate-600 dark:text-slate-400 mt-3 text-sm sm:text-base leading-relaxed">
+              Graduate with a market-ready product in hand, backed by experienced experts and a dedicated team. Transform from learner to entrepreneur.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Card 1: Build Your Product */}
+            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                    <GraduationCap className="h-5 w-5" />
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-slate-900/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 uppercase tracking-widest font-cyber">
+                    Most Popular
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Build Your Product</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Create a real, market-ready app or product during your training. Graduate with something you can showcase, sell, or launch.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-cyan hover:text-cyan-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 2: AI-Powered Learning */}
+            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                    <Brain className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">AI-Powered Learning</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Personalized learning paths powered by AI. Master cutting-edge technologies at your own pace with adaptive content.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-purple hover:text-purple-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 3: Become an Entrepreneur */}
+            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                    <Briefcase className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Become an Entrepreneur</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Learn to market your product, build your brand, and launch your business with guidance from successful founders.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-cyan hover:text-cyan-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 4: Business Models */}
+            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                    <Lightbulb className="h-5 w-5" />
+                  </div>
+                  <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-slate-900/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 uppercase tracking-widest font-cyber">
+                    Visa Support
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Business Models</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Develop scalable startup ideas with Innovator Visa support. Turn your project into a thriving business.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-purple hover:text-purple-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 5: Certifications */}
+            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
+                    <Award className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Certifications</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Earn industry-recognized certificates. Validate your skills and demonstrate your expertise to clients and investors.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-cyan hover:text-cyan-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Card 6: Expert Team Support */}
+            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
+                    <Users className="h-5 w-5" />
+                  </div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-2">Expert Team Support</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Work alongside experienced professionals who guide you every step. Get mentorship from practitioners who have built successful products.
+                </p>
+              </div>
+              <div className="mt-4 pt-2">
+                <a href="#apply" className="inline-flex items-center text-xs font-bold text-cyber-purple hover:text-purple-400 hover:gap-1.5 transition-all font-cyber">
+                  Learn More <span className="ml-1">→</span>
+                </a>
+              </div>
             </div>
 
           </div>

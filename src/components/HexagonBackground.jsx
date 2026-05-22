@@ -52,9 +52,9 @@ export default function HexagonBackground() {
         Math.max(width, height)
       );
       if (isLight) {
-        bgGrad.addColorStop(0, '#f8fafc'); // slate-50
-        bgGrad.addColorStop(0.5, '#f1f5f9'); // slate-100
-        bgGrad.addColorStop(1, '#e2e8f0'); // slate-200
+        bgGrad.addColorStop(0, 'rgba(254, 252, 246, 0.35)'); // Translucent Warm Solarpunk pearl
+        bgGrad.addColorStop(0.55, 'rgba(240, 253, 244, 0.55)'); // Translucent Fresh cyber-nature mint
+        bgGrad.addColorStop(1, 'rgba(224, 242, 254, 0.75)'); // Translucent Clear premium sky-blue
       } else {
         bgGrad.addColorStop(0, '#090b11');
         bgGrad.addColorStop(0.5, '#040508');
@@ -64,8 +64,8 @@ export default function HexagonBackground() {
       ctx.fillRect(0, 0, width, height);
 
       // Draw faint cyber grid lines
-      ctx.strokeStyle = isLight ? 'rgba(14, 165, 233, 0.05)' : 'rgba(0, 242, 254, 0.015)';
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = isLight ? 'rgba(29, 78, 216, 0.18)' : 'rgba(0, 242, 254, 0.015)';
+      ctx.lineWidth = isLight ? 1.2 : 1;
       const gridSize = 60;
       for (let x = 0; x < width; x += gridSize) {
         ctx.beginPath();
@@ -91,18 +91,18 @@ export default function HexagonBackground() {
 
         // Draw node
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius * (isLight ? 2.5 : 1), 0, Math.PI * 2);
         ctx.fillStyle = isLight 
-          ? `rgba(14, 165, 233, ${p.glowIntensity})` 
+          ? `rgba(29, 78, 216, ${Math.min(1, p.glowIntensity * 1.8)})` 
           : `rgba(0, 242, 254, ${p.glowIntensity})`;
-        ctx.shadowBlur = isLight ? 4 : 10;
-        ctx.shadowColor = isLight ? '#0ea5e9' : '#00f2fe';
+        ctx.shadowBlur = isLight ? 14 : 10;
+        ctx.shadowColor = isLight ? '#1d4ed8' : '#00f2fe';
         ctx.fill();
         ctx.shadowBlur = 0; // Reset shadow
       });
 
       // Draw glowing connectivity vectors/circuits (only close nodes)
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = isLight ? 1.8 : 0.5;
       for (let i = 0; i < points.length; i++) {
         for (let j = i + 1; j < points.length; j++) {
           const dx = points[i].x - points[j].x;
@@ -110,9 +110,9 @@ export default function HexagonBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 150) {
-            const alpha = (1 - dist / 150) * 0.12;
+            const alpha = (1 - dist / 150) * (isLight ? 0.85 : 0.12);
             ctx.strokeStyle = isLight 
-              ? `rgba(14, 165, 233, ${alpha})` 
+              ? `rgba(29, 78, 216, ${alpha})` 
               : `rgba(0, 242, 254, ${alpha})`;
             
             // Create nice glowing stroke
@@ -167,7 +167,7 @@ export default function HexagonBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-full -z-50 overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
+    <div className="fixed inset-0 w-full h-full -z-50 overflow-hidden bg-transparent dark:bg-slate-950 transition-colors duration-500">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         {floatingHexagons}

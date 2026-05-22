@@ -71,6 +71,7 @@ export default function ModuleDetail({ params }) {
   const isEnrolled = enrollments.some(e => e.moduleId === moduleId);
   const isComing = module?.status === 'Coming Soon';
 
+  /*
   const handleActionClick = () => {
     if (isComing) return;
 
@@ -88,6 +89,26 @@ export default function ModuleDetail({ params }) {
       
       // Perform enrollment
       enrollMutation.mutate();
+    } else if (!isEnrolled) {
+      enrollMutation.mutate();
+    } else {
+      setLocation('/dashboard');
+    }
+  };
+  */
+
+  const handleActionClick = () => {
+    if (isComing) return;
+
+    if (!user) {
+      // Redirect to homepage and scroll to cohort application section
+      setLocation('/');
+      setTimeout(() => {
+        const applySection = document.getElementById('apply');
+        if (applySection) {
+          applySection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 300);
     } else if (!isEnrolled) {
       enrollMutation.mutate();
     } else {
@@ -173,6 +194,20 @@ export default function ModuleDetail({ params }) {
             {isComing ? "COMING SOON" : isEnrolled ? "CONTINUE TO WORKSPACE" : "ENROLL IN PROGRAM"}
             {!isComing && <ArrowRight className="h-3.5 w-3.5" />}
           </button> */}
+          <button
+            onClick={handleActionClick}
+            disabled={isComing}
+            className={`w-full sm:w-auto px-6 py-2.5 rounded-lg text-xs font-bold font-cyber shrink-0 shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 ${
+              isComing
+                ? "bg-slate-200 dark:bg-slate-900 text-slate-400 dark:text-slate-600 border border-slate-300 dark:border-slate-800 cursor-not-allowed"
+                : isEnrolled
+                ? "bg-slate-100 dark:bg-slate-900 text-sky-600 dark:text-cyber-cyan border border-sky-200 dark:border-cyber-cyan/35 hover:bg-sky-50 dark:hover:bg-cyber-cyan/10"
+                : "bg-gradient-to-r from-sky-500 via-cyber-cyan to-cyber-blue text-white dark:text-slate-900 hover:brightness-110 shadow-[0_0_15px_rgba(14,165,233,0.3)] dark:shadow-[0_0_15px_rgba(0,242,254,0.1)] border-0"
+            }`}
+          >
+            {isComing ? "COMING SOON" : isEnrolled ? "CONTINUE TO WORKSPACE" : "ENROLL IN PROGRAM"}
+            {!isComing && <ArrowRight className="h-3.5 w-3.5" />}
+          </button>
         </div>
       </div>
 
