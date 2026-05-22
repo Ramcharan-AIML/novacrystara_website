@@ -81,7 +81,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
           {/* Column 2: Quick Links */}
           <div className="text-left">
             <h4 className="font-heading text-sm font-bold text-slate-800 dark:text-white uppercase tracking-wider mb-5">
