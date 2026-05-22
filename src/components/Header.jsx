@@ -243,92 +243,105 @@ export default function Header() {
       className="w-full border-b border-slate-200/50 dark:border-slate-800/40 bg-white/70 dark:bg-slate-950/65 cyber-navbar transition-all duration-300"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-14 md:h-16 items-center justify-between">
           {/* Logo & Brand */}
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={handleLogoClick}>
-            <img src={logo_1} alt="NovaCrystara Brand Logo" className="h-9 w-auto object-contain drop-shadow-[0_0_10px_rgba(0,242,254,0.4)] dark:drop-shadow-[0_0_10px_rgba(0,242,254,0.4)] group-hover:scale-105 transition-all duration-300" />
-            <img src={name_logo} alt="NovaCrystara Name Logo" className="h-5 w-auto object-contain dark:invert-0 invert group-hover:brightness-110 transition-all duration-300" />
+          <div className="flex items-center gap-2 md:gap-3 cursor-pointer group" onClick={handleLogoClick}>
+            <img src={logo_1} alt="NovaCrystara Brand Logo" className="h-7 md:h-9 w-auto object-contain drop-shadow-[0_0_10px_rgba(0,242,254,0.4)] dark:drop-shadow-[0_0_10px_rgba(0,242,254,0.4)] group-hover:scale-105 transition-all duration-300" />
+            <img src={name_logo} alt="NovaCrystara Name Logo" className="h-4 md:h-5 w-auto object-contain dark:invert-0 invert group-hover:brightness-110 transition-all duration-300" />
           </div>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-8">
-            <button onClick={() => handleNavClick('technology')} className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
+          <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+            <button onClick={() => handleNavClick('technology')} className="text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
               Programs
             </button>
-            <button onClick={() => handleNavClick('why-us')} className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
+            <button onClick={() => handleNavClick('why-us')} className="text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
               Why Us
             </button>
-            <button onClick={() => handleNavClick('how-it-works')} className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
+            <button onClick={() => handleNavClick('how-it-works')} className="text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
               Roadmap
             </button>
-            <button onClick={() => handleNavClick('testimonials')} className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
+            <button onClick={() => handleNavClick('testimonials')} className="text-xs lg:text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">
               Alumni
             </button>
           </nav>
 
           {/* User Profile / Dashboard / CTAs & Theme Toggle */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2 lg:gap-4">
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg border border-slate-300 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/20 hover:bg-slate-100/60 dark:hover:bg-slate-900/50 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-cyber-cyan transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95 shadow-sm dark:shadow-none"
+              className="p-1.5 lg:p-2 rounded-lg border border-slate-300 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/20 hover:bg-slate-100/60 dark:hover:bg-slate-900/50 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-cyber-cyan transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95 shadow-sm dark:shadow-none"
               title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
             >
               {theme === 'light' ? (
-                <Moon className="h-4.5 w-4.5 text-sky-600 transition-transform duration-500 rotate-0 hover:-rotate-12" />
+                <Moon className="h-4 w-4 lg:h-4.5 lg:w-4.5 text-sky-600 transition-transform duration-500 rotate-0 hover:-rotate-12" />
               ) : (
-                <Sun className="h-4.5 w-4.5 text-amber-400 transition-transform duration-500 hover:rotate-45" />
+                <Sun className="h-4 w-4 lg:h-4.5 lg:w-4.5 text-amber-400 transition-transform duration-500 hover:rotate-45" />
               )}
             </button>
 
             {!isLoading && user ? (
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2 lg:gap-4">
                 <Link href="/dashboard">
-                  <button className="flex items-center gap-2 px-4 py-1.5 rounded-md text-xs font-semibold text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue border border-cyan-400/25 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_10px_rgba(0,242,254,0.2)]">
+                  <button className="flex items-center gap-1.5 lg:gap-2 px-3 py-1.5 lg:px-4 rounded-md text-[11px] lg:text-xs font-semibold text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue border border-cyan-400/25 hover:brightness-110 active:scale-95 transition-all shadow-[0_0_10px_rgba(0,242,254,0.2)]">
                     <LayoutDashboard className="h-3.5 w-3.5" />
                     Dashboard
                   </button>
                 </Link>
 
-                <div className="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-4">
-                  <Link href="/profile" className="flex items-center gap-2 group cursor-pointer">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sky-600 dark:text-cyber-cyan group-hover:border-sky-600 dark:group-hover:border-cyber-cyan transition-all">
-                      <User className="h-4 w-4" />
+                <div className="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-2 lg:pl-4">
+                  <Link href="/profile" className="flex items-center gap-1.5 lg:gap-2 group cursor-pointer">
+                    <div className="flex h-7 w-7 lg:h-8 lg:w-8 items-center justify-center rounded-full bg-slate-200 dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-sky-600 dark:text-cyber-cyan group-hover:border-sky-600 dark:group-hover:border-cyber-cyan transition-all">
+                      <User className="h-3.5 w-3.5 lg:h-4 lg:w-4" />
                     </div>
                     <div className="text-left">
-                      <p className="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyber-cyan transition-colors">
+                      <p className="text-[11px] lg:text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-cyber-cyan transition-colors">
                         {user.firstName}
                       </p>
-                      <p className="text-[10px] text-slate-500">Developer</p>
+                      <p className="text-[9px] lg:text-[10px] text-slate-500">Developer</p>
                     </div>
                   </Link>
 
                   <button
                     onClick={() => logoutMutation.mutate()}
-                    className="p-2 ml-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-red-500 hover:bg-red-500/10 active:scale-95 transition-all"
+                    className="p-1.5 ml-1 lg:ml-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-red-500 hover:bg-red-500/10 active:scale-95 transition-all"
                     title="Sign Out"
                   >
-                    <LogOut className="h-4 w-4" />
+                    <LogOut className="h-3.5 w-3.5 lg:h-4 lg:w-4" />
                   </button>
                 </div>
               </div>
             ) : (
               <button
                 onClick={() => handleNavClick('apply')}
-                className="px-5 py-2 rounded-md text-xs font-bold font-cyber text-sky-600 dark:text-cyber-cyan border border-sky-500/30 dark:border-cyber-cyan/30 bg-sky-500/5 dark:bg-cyber-cyan/5 hover:bg-sky-500/20 dark:hover:bg-cyber-cyan/20 hover:border-sky-500 dark:hover:border-cyber-cyan transition-all shadow-[0_0_15px_rgba(14,165,233,0.1)] dark:shadow-[0_0_15px_rgba(0,242,254,0.1)] active:scale-95"
+                className="px-3.5 py-1.5 lg:px-5 lg:py-2 rounded-md text-[11px] lg:text-xs font-bold font-cyber text-sky-600 dark:text-cyber-cyan border border-sky-500/30 dark:border-cyber-cyan/30 bg-sky-500/5 dark:bg-cyber-cyan/5 hover:bg-sky-500/20 dark:hover:bg-cyber-cyan/20 hover:border-sky-500 dark:hover:border-cyber-cyan transition-all shadow-[0_0_15px_rgba(14,165,233,0.1)] dark:shadow-[0_0_15px_rgba(0,242,254,0.1)] active:scale-95"
               >
                 APPLY NOW
               </button>
             )}
           </div>
 
-          {/* Mobile Hamburguer Menu */}
-          <div className="flex md:hidden items-center gap-3">
+          {/* Mobile Hamburger & Mobile Theme Toggle */}
+          <div className="flex md:hidden items-center gap-2 sm:gap-3">
+            {/* Theme Toggle Button for Mobile */}
+            <button
+              onClick={toggleTheme}
+              className="p-1.5 rounded-lg border border-slate-300 dark:border-slate-800/40 bg-white/40 dark:bg-slate-900/20 hover:bg-slate-100/60 dark:hover:bg-slate-900/50 text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-cyber-cyan transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95 shadow-sm dark:shadow-none"
+              title={theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+            >
+              {theme === 'light' ? (
+                <Moon className="h-4 w-4 text-sky-600" />
+              ) : (
+                <Sun className="h-4 w-4 text-amber-400" />
+              )}
+            </button>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900/50"
+              className="p-1.5 rounded-md text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-900/50"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? <X className="h-5.5 w-5.5" /> : <Menu className="h-5.5 w-5.5" />}
             </button>
           </div>
         </div>

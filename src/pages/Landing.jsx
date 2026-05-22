@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'wouter';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
   Sparkles,
   TrendingUp,
@@ -65,6 +66,67 @@ const TESTIMONIALS = [
 export default function Landing() {
   const [, setLocation] = useLocation();
   const queryClient = useQueryClient();
+
+  // Scroll Parallax Hooks
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const heroBgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const heroContentY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const heroContentOpacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
+  const logoRotate = useTransform(scrollYProgress, [0, 1], [0, 30]);
+
+  // Framer Motion Animation Variants
+  const heroContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      }
+    }
+  };
+
+  const heroItemVariants = {
+    hidden: { opacity: 0, y: 25 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
+  const gridContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.05
+      }
+    }
+  };
+
+  const cardRevealVariants = {
+    hidden: { opacity: 0, y: 35 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 90,
+        damping: 14
+      }
+    }
+  };
 
   // Testimonial Carousel State
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -245,66 +307,80 @@ export default function Landing() {
     <div className="relative min-h-screen text-slate-200">
       
       {/* 1. HERO BANNER SECTION */}
-      <section className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 border-b border-slate-900">
+      <section ref={heroRef} className="relative overflow-hidden pt-20 pb-24 md:pt-32 md:pb-36 border-b border-slate-900">
         
         {/* Background Trace Graphic */}
-        <div className="absolute inset-0 -z-10 bg-cover bg-center opacity-30 hero-bg-image" style={{ backgroundImage: `url(${heroBgImg})` }}></div>
+        <motion.div
+          className="absolute inset-0 -z-10 bg-cover bg-center opacity-30 hero-bg-image"
+          style={{ backgroundImage: `url(${heroBgImg})`, y: heroBgY }}
+        ></motion.div>
         <div className="absolute inset-0 -z-10 bg-slate-950/65"></div>
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative">
+        <motion.div
+          variants={heroContainerVariants}
+          initial="hidden"
+          animate="visible"
+          style={{ y: heroContentY, opacity: heroContentOpacity }}
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative"
+        >
           
           {/* Glowing brand metallic logo floating */}
-          <div className="flex justify-center mb-6">
-            <div className="relative p-2.5 rounded-3xl bg-slate-900/60 border border-cyber-cyan/35 shadow-[0_0_30px_rgba(0,242,254,0.2)] animate-float-medium">
+          <motion.div variants={heroItemVariants} className="flex justify-center mb-6">
+            <motion.div
+              style={{ rotate: logoRotate }}
+              whileHover={{ scale: 1.08, rotate: 10 }}
+              transition={{ type: "spring", stiffness: 300, damping: 12 }}
+              className="relative p-2.5 rounded-3xl bg-slate-900/60 border border-cyber-cyan/35 shadow-[0_0_30px_rgba(0,242,254,0.2)] animate-float-medium cursor-pointer"
+            >
               <img src={Main_logo} alt="NovaCrystara Hex Logo" className="h-16 w-16 object-contain" />
               <div className="absolute -inset-0.5 rounded-3xl bg-gradient-to-r from-cyber-cyan to-cyber-blue opacity-30 blur"></div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-cyber-cyan border border-cyber-cyan/20 bg-cyber-cyan/5 uppercase font-cyber mb-4">
+          <motion.span variants={heroItemVariants} className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-cyber-cyan border border-cyber-cyan/20 bg-cyber-cyan/5 uppercase font-cyber mb-4">
             <Sparkles className="h-3 w-3" /> AI & Telemetry Labs
-          </span>
+          </motion.span>
 
-          <h1 className="font-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+          <motion.h1 variants={heroItemVariants} className="font-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
             Build the Future of <br className="hidden sm:inline" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-white to-cyber-blue text-glow-cyan">
               Intelligent Automation
             </span>
-          </h1>
+          </motion.h1>
 
-          <p className="mx-auto max-w-2xl text-base sm:text-lg text-slate-400 mb-8 leading-relaxed">
+          <motion.p variants={heroItemVariants} className="mx-auto max-w-2xl text-base sm:text-lg text-slate-400 mb-8 leading-relaxed">
             Reinvent your technical expertise in a world powered by AI Agents. Build deep capstone telemetry architectures and secure prestigious global tech partnerships.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
+          <motion.div variants={heroItemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2, boxShadow: "0 0 25px rgba(0,242,254,0.5)" }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
               onClick={() => {
                 const el = document.getElementById('apply');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="w-full sm:w-auto px-8 py-3 rounded-lg text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-[0_0_20px_rgba(0,242,254,0.3)] hover:brightness-110 active:scale-95 transition-all"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-[0_0_20px_rgba(0,242,254,0.3)] hover:brightness-110 transition-all"
             >
               APPLY FOR COHORT
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.04, y: -2, borderColor: "rgba(0, 242, 254, 0.6)", backgroundColor: "rgba(0, 242, 254, 0.05)" }}
+              whileTap={{ scale: 0.96 }}
+              transition={{ type: "spring", stiffness: 400, damping: 15 }}
               onClick={() => {
                 const el = document.getElementById('technology');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="w-full sm:w-auto px-8 py-3 rounded-lg text-sm font-bold font-cyber text-slate-300 border border-slate-700 bg-slate-900/50 hover:bg-slate-900 hover:text-white active:scale-95 transition-all"
+              className="w-full sm:w-auto px-8 py-3 rounded-lg text-sm font-bold font-cyber text-slate-300 border border-slate-700 bg-slate-900/50 hover:text-white transition-all"
             >
               EXPLORE PROGRAMS
-            </button>
-            {/* <button
-              onClick={handleQuickLogin}
-              className="w-full sm:w-auto px-5 py-3 rounded-lg text-xs font-bold text-slate-400 bg-slate-950 border border-slate-800 hover:border-cyber-cyan hover:text-cyber-cyan transition-all active:scale-95"
-            >
-              SIMULATE LOGIN
-            </button> */}
-          </div>
+            </motion.button>
+          </motion.div>
 
           {/* Quick Metrics Overlay */}
-          <div className="mx-auto max-w-4xl mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl border border-slate-900 bg-slate-950/70 backdrop-blur-md">
+          <motion.div variants={heroItemVariants} className="mx-auto max-w-4xl mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 p-6 rounded-2xl border border-slate-900 bg-slate-950/70 backdrop-blur-md">
             <div>
               <p className="font-cyber text-2xl font-bold text-white text-glow-cyan">98%</p>
               <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">Placement Rate</p>
@@ -321,9 +397,9 @@ export default function Landing() {
               <p className="font-cyber text-2xl font-bold text-white text-glow-cyan">London</p>
               <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">HQ Corporate Hub</p>
             </div>
-          </div>
+          </motion.div>
 
-        </div>
+        </motion.div>
       </section>
 
       {/* 2. WHY CHOOSE US FEATURE CARDS */}
@@ -341,10 +417,21 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={gridContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             
             {/* Card 1: Agile Methodologies */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
                 <Zap className="h-6 w-6" />
               </div>
@@ -354,10 +441,15 @@ export default function Landing() {
                   Learn modern development practices used by top tech companies.
                 </p>
               </div>
-            </div>
-
+            </motion.div>
+ 
             {/* Card 2: Data-Driven Decisions */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
                 <Target className="h-6 w-6" />
               </div>
@@ -367,10 +459,15 @@ export default function Landing() {
                   Master analytics and make informed business decisions.
                 </p>
               </div>
-            </div>
-
+            </motion.div>
+ 
             {/* Card 3: Scalable Startups */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
                 <TrendingUp className="h-6 w-6" />
               </div>
@@ -380,10 +477,15 @@ export default function Landing() {
                   Build products that can grow from zero to millions of users.
                 </p>
               </div>
-            </div>
-
+            </motion.div>
+ 
             {/* Card 4: 100% Work Confidence */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
                 <Shield className="h-6 w-6" />
               </div>
@@ -393,10 +495,15 @@ export default function Landing() {
                   Graduate job-ready with practical experience under your belt.
                 </p>
               </div>
-            </div>
-
+            </motion.div>
+ 
             {/* Card 5: Real-Time Projects */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass hover-elevate text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
                 <Clock className="h-6 w-6" />
               </div>
@@ -406,10 +513,15 @@ export default function Landing() {
                   Work on live projects with actual users and feedback.
                 </p>
               </div>
-            </div>
-
+            </motion.div>
+ 
             {/* Card 6: Global Network */}
-            <div className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="flex items-start gap-4 p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left cursor-pointer"
+            >
               <div className="h-12 w-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
                 <Globe className="h-6 w-6" />
               </div>
@@ -419,9 +531,9 @@ export default function Landing() {
                   Connect with professionals and peers from around the world.
                 </p>
               </div>
-            </div>
-
-          </div>
+            </motion.div>
+ 
+          </motion.div>
         </div>
       </section>
 
@@ -437,10 +549,21 @@ export default function Landing() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            variants={gridContainerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             
             {/* Card 1: Build Your Product */}
-            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
@@ -460,10 +583,15 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2: AI-Powered Learning */}
-            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
@@ -480,10 +608,15 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3: Become an Entrepreneur */}
-            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
@@ -500,10 +633,15 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 4: Business Models */}
-            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
@@ -523,10 +661,15 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 5: Certifications */}
-            <div className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass hover-elevate text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan shadow-[0_0_12px_rgba(6,182,212,0.15)]">
@@ -543,10 +686,15 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 6: Expert Team Support */}
-            <div className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px]">
+            <motion.div
+              variants={cardRevealVariants}
+              whileHover={{ y: -6, scale: 1.025 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              className="relative p-6 rounded-xl cyber-glass-purple hover-elevate-purple text-left flex flex-col justify-between min-h-[250px] cursor-pointer"
+            >
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple shadow-[0_0_12px_rgba(168,85,247,0.15)]">
@@ -563,9 +711,9 @@ export default function Landing() {
                   Learn More <span className="ml-1">→</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -592,7 +740,13 @@ export default function Landing() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              variants={gridContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            >
               {modules.map((m) => {
                 const isComing = m.status === 'Coming Soon';
                 const levelColors = {
@@ -602,9 +756,12 @@ export default function Landing() {
                 };
 
                 return (
-                  <div
+                  <motion.div
                     key={m.id}
-                    className="relative flex flex-col justify-between p-6 rounded-xl cyber-glass hover-elevate"
+                    variants={cardRevealVariants}
+                    whileHover={{ y: -6, scale: 1.025 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                    className="relative flex flex-col justify-between p-6 rounded-xl cyber-glass hover-elevate cursor-pointer"
                   >
                     <div>
                       {/* Top Badges */}
@@ -641,10 +798,10 @@ export default function Landing() {
                         {isComing ? "COMING SOON" : "ENROLL NOW"}
                       </button>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
-            </div>
+            </motion.div>
           )}
 
         </div>
@@ -670,55 +827,80 @@ export default function Landing() {
             {/* Horizontal Line behind for large viewports */}
             <div className="absolute top-1/2 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-slate-800 to-transparent -translate-y-1/2 hidden md:block"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+            <motion.div
+              variants={gridContainerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10"
+            >
               
               {/* Step 1 */}
-              <div className="text-center cyber-glass p-6 rounded-xl">
-                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan text-base font-bold font-cyber mb-4">
+              <motion.div
+                variants={cardRevealVariants}
+                whileHover={{ y: -6, scale: 1.025 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="text-center cyber-glass p-6 rounded-xl cursor-pointer"
+              >
+                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan text-base font-bold font-cyber mb-4 animate-pulse">
                   01
                 </div>
                 <h3 className="font-bold text-white mb-2 text-sm">Apply & Resume</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Submit your details and upload your portfolio or resume. Secure a customized onboarding interview.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Step 2 */}
-              <div className="text-center cyber-glass p-6 rounded-xl">
-                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple text-base font-bold font-cyber mb-4">
+              <motion.div
+                variants={cardRevealVariants}
+                whileHover={{ y: -6, scale: 1.025 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="text-center cyber-glass p-6 rounded-xl cursor-pointer"
+              >
+                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple text-base font-bold font-cyber mb-4 animate-pulse">
                   02
                 </div>
                 <h3 className="font-bold text-white mb-2 text-sm">Choose Cohort</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Match with our specialized engineering tracks. Select your module and start interactive telemetry setups.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Step 3 */}
-              <div className="text-center cyber-glass p-6 rounded-xl">
-                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan text-base font-bold font-cyber mb-4">
+              <motion.div
+                variants={cardRevealVariants}
+                whileHover={{ y: -6, scale: 1.025 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="text-center cyber-glass p-6 rounded-xl cursor-pointer"
+              >
+                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-cyan/10 border border-cyber-cyan/35 text-cyber-cyan text-base font-bold font-cyber mb-4 animate-pulse">
                   03
                 </div>
                 <h3 className="font-bold text-white mb-2 text-sm">Build Capstone</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Construct a high-performance active project. Validate edge cases with expert team leads.
                 </p>
-              </div>
+              </motion.div>
 
               {/* Step 4 */}
-              <div className="text-center cyber-glass p-6 rounded-xl">
-                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple text-base font-bold font-cyber mb-4">
+              <motion.div
+                variants={cardRevealVariants}
+                whileHover={{ y: -6, scale: 1.025 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                className="text-center cyber-glass p-6 rounded-xl cursor-pointer"
+              >
+                <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-cyber-purple/10 border border-cyber-purple/35 text-cyber-purple text-base font-bold font-cyber mb-4 animate-pulse">
                   04
                 </div>
                 <h3 className="font-bold text-white mb-2 text-sm">Earn Certificate</h3>
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Perfect project progress milestones to 100%. Receive verified cryptographical certifications.
                 </p>
-              </div>
+              </motion.div>
 
-            </div>
+            </motion.div>
           </div>
-
         </div>
       </section>
 
@@ -739,39 +921,50 @@ export default function Landing() {
           <div className="relative p-8 md:p-12 rounded-2xl cyber-glass overflow-hidden">
             <div className="absolute top-0 right-0 h-40 w-40 bg-cyber-cyan/5 rounded-full blur-3xl -z-10"></div>
             
-            <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10 text-left">
-              
-              {/* Initials Avatar Grid */}
-              <div className="h-16 w-16 md:h-20 md:w-20 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-cyber-cyan to-cyber-blue text-slate-900 font-bold text-xl md:text-2xl shadow-lg border border-cyan-300/35">
-                {TESTIMONIALS[activeTestimonial].initials}
-              </div>
+            <div className="min-h-[220px] md:min-h-[160px] flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeTestimonial}
+                  initial={{ opacity: 0, x: 25 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -25 }}
+                  transition={{ duration: 0.35, ease: "easeInOut" }}
+                  className="flex flex-col md:flex-row items-center gap-6 md:gap-10 text-left w-full"
+                >
+                  
+                  {/* Initials Avatar Grid */}
+                  <div className="h-16 w-16 md:h-20 md:w-20 shrink-0 flex items-center justify-center rounded-full bg-gradient-to-tr from-cyber-cyan to-cyber-blue text-slate-900 font-bold text-xl md:text-2xl shadow-lg border border-cyan-300/35">
+                    {TESTIMONIALS[activeTestimonial].initials}
+                  </div>
 
-              <div>
-                <p className="text-lg md:text-xl font-medium text-slate-200 leading-relaxed italic mb-6">
-                  "{TESTIMONIALS[activeTestimonial].quote}"
-                </p>
-
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  <div>
-                    <h4 className="font-bold text-white text-base">
-                      {TESTIMONIALS[activeTestimonial].name}
-                    </h4>
-                    <p className="text-xs text-slate-500">
-                      {TESTIMONIALS[activeTestimonial].role}
+                  <div className="grow">
+                    <p className="text-lg md:text-xl font-medium text-slate-200 leading-relaxed italic mb-6">
+                      "{TESTIMONIALS[activeTestimonial].quote}"
                     </p>
+
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                      <div>
+                        <h4 className="font-bold text-white text-base">
+                          {TESTIMONIALS[activeTestimonial].name}
+                        </h4>
+                        <p className="text-xs text-slate-500">
+                          {TESTIMONIALS[activeTestimonial].role}
+                        </p>
+                      </div>
+
+                      {/* Skills tags */}
+                      <div className="flex items-center gap-2 flex-wrap">
+                        {TESTIMONIALS[activeTestimonial].skills.map((s, idx) => (
+                          <span key={idx} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] text-cyber-cyan">
+                            {s}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Skills tags */}
-                  <div className="flex items-center gap-2 flex-wrap">
-                    {TESTIMONIALS[activeTestimonial].skills.map((s, idx) => (
-                      <span key={idx} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] text-cyber-cyan">
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Slider Dots */}
@@ -795,7 +988,13 @@ export default function Landing() {
 
       {/* 6. INTERACTIVE CTA REGISTRATION FORM */}
       <section id="apply" className="py-20 bg-slate-950/30">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={cardRevealVariants}
+          className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"
+        >
           
           <div className="p-8 md:p-10 rounded-2xl cyber-glass relative overflow-hidden shadow-2xl">
             <div className="absolute -top-10 -left-10 h-32 w-32 bg-cyber-cyan/5 rounded-full blur-3xl -z-10"></div>
@@ -809,143 +1008,150 @@ export default function Landing() {
               </p>
             </div>
 
-            {isRegistered ? (
-              /*
-              <div className="py-8 text-center animate-fadeIn">
-                <CheckCircle className="h-16 w-16 text-cyber-cyan mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,242,254,0.4)]" />
-                <h3 className="text-xl font-bold text-white mb-2">Application Confirmed!</h3>
-                <p className="text-sm text-slate-400 max-w-md mx-auto mb-6">
-                  Thank you for applying. We have simulated your workspace setup. You are now logged in and pre-enrolled!
-                </p>
-                <Link href="/dashboard">
-                  <button className="px-6 py-2.5 rounded-md text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-lg active:scale-95 transition-all">
-                    GO TO DASHBOARD
+            <AnimatePresence mode="wait">
+              {isRegistered ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: -15 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 18 }}
+                  className="py-8 text-center"
+                >
+                  <CheckCircle className="h-16 w-16 text-cyber-cyan mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,242,254,0.4)]" />
+                  <h3 className="text-xl font-bold text-white mb-2">Application Confirmed!</h3>
+                  <p className="text-sm text-slate-400 max-w-md mx-auto mb-6">
+                    Thank you for submitting your cohort application! We have successfully received your registration details and dossier. Our team will review your application and reach out to you shortly.
+                  </p>
+                  <button
+                    onClick={() => {
+                      setFullName('');
+                      setEmail('');
+                      setSelectedModule('ai-agents');
+                      setResumeFile(null);
+                      setUploadedUrl('');
+                      setIsRegistered(false);
+                    }}
+                    className="px-6 py-2.5 rounded-md text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-lg active:scale-95 transition-all mt-4 hover:brightness-110"
+                  >
+                    REGISTER FOR ANOTHER ENTRY
                   </button>
-                </Link>
-              </div>
-              */
-              <div className="py-8 text-center animate-fadeIn">
-                <CheckCircle className="h-16 w-16 text-cyber-cyan mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,242,254,0.4)]" />
-                <h3 className="text-xl font-bold text-white mb-2">Application Confirmed!</h3>
-                <p className="text-sm text-slate-400 max-w-md mx-auto mb-6">
-                  Thank you for submitting your cohort application! We have successfully received your registration details and dossier. Our team will review your application and reach out to you shortly.
-                </p>
-                <button
-                  onClick={() => {
-                    setFullName('');
-                    setEmail('');
-                    setSelectedModule('ai-agents');
-                    setResumeFile(null);
-                    setUploadedUrl('');
-                    setIsRegistered(false);
-                  }}
-                  className="px-6 py-2.5 rounded-md text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-lg active:scale-95 transition-all mt-4"
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.25 }}
+                  onSubmit={handleRegisterSubmit}
+                  className="space-y-6 text-left"
                 >
-                  REGISTER FOR ANOTHER ENTRY
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleRegisterSubmit} className="space-y-6 text-left">
-                
-                <div>
-                  <label htmlFor="name" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Enter your first and last name"
-                    className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="name@company.com"
-                    className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="program" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
-                    Select Tech Program
-                  </label>
-                  <select
-                    id="program"
-                    value={selectedModule}
-                    onChange={(e) => setSelectedModule(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
-                  >
-                    <option value="ai-agents">AI Agents (Advanced - 12 Weeks)</option>
-                    <option value="iot">IoT (Intermediate - 10 Weeks)</option>
-                    <option value="data-engineering">Data Engineering (Intermediate - 8 Weeks)</option>
-                    <option value="project-management">Project Management (Beginner - 6 Weeks)</option>
-                    <option value="scrum-master">Scrum Master (Beginner - 6 Weeks)</option>
-                  </select>
-                </div>
-
-                {/* Upload Section (interacts with /api/objects/upload) */}
-                <div>
-                  <label className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
-                    Upload CV / Portfolio (Optional)
-                  </label>
-                  <div
-                    onClick={() => fileInputRef.current?.click()}
-                    className="border-2 border-dashed border-slate-800 rounded-lg p-6 text-center cursor-pointer hover:border-cyber-cyan hover:bg-cyber-cyan/5 transition-all group"
-                  >
+                  
+                  <div>
+                    <label htmlFor="name" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
+                      Full Name
+                    </label>
                     <input
-                      type="file"
-                      ref={fileInputRef}
-                      onChange={handleFileUpload}
-                      className="hidden"
-                      accept=".pdf,.doc,.docx"
+                      id="name"
+                      type="text"
+                      required
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
+                      placeholder="Enter your first and last name"
+                      className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
                     />
-
-                    {isUploading ? (
-                      <div className="space-y-2">
-                        <Clock className="h-8 w-8 text-cyber-cyan animate-spin mx-auto" />
-                        <p className="text-xs text-slate-400">Uploading your dossier to secure storage...</p>
-                      </div>
-                    ) : resumeFile ? (
-                      <div className="space-y-2">
-                        <FileText className="h-8 w-8 text-cyber-cyan mx-auto drop-shadow-[0_0_10px_rgba(0,242,254,0.4)]" />
-                        <p className="text-sm font-semibold text-slate-200">{resumeFile.name}</p>
-                        <p className="text-[10px] text-slate-500">File attached successfully</p>
-                      </div>
-                    ) : (
-                      <div className="space-y-2">
-                        <Upload className="h-8 w-8 text-slate-500 group-hover:text-cyber-cyan transition-colors mx-auto" />
-                        <p className="text-sm font-semibold text-slate-300">Click to upload dossier</p>
-                        <p className="text-[10px] text-slate-500">PDF, DOC, DOCX up to 10MB</p>
-                      </div>
-                    )}
                   </div>
-                </div>
 
-                <button
-                  type="submit"
-                  className="w-full py-3 rounded-lg text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-lg hover:brightness-110 active:scale-95 transition-all"
-                >
-                  SUBMIT CONFIRM APPLICATION
-                </button>
+                  <div>
+                    <label htmlFor="email" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
+                      Email Address
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@company.com"
+                      className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
+                    />
+                  </div>
 
-              </form>
-            )}
+                  <div>
+                    <label htmlFor="program" className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
+                      Select Tech Program
+                    </label>
+                    <select
+                      id="program"
+                      value={selectedModule}
+                      onChange={(e) => setSelectedModule(e.target.value)}
+                      className="w-full px-4 py-3 rounded-lg text-sm text-slate-200 bg-slate-950/80 border border-slate-800 focus:border-cyber-cyan focus:outline-none focus:ring-1 focus:ring-cyber-cyan transition-colors"
+                    >
+                      <option value="ai-agents">AI Agents (Advanced - 12 Weeks)</option>
+                      <option value="iot">IoT (Intermediate - 10 Weeks)</option>
+                      <option value="data-engineering">Data Engineering (Intermediate - 8 Weeks)</option>
+                      <option value="project-management">Project Management (Beginner - 6 Weeks)</option>
+                      <option value="scrum-master">Scrum Master (Beginner - 6 Weeks)</option>
+                    </select>
+                  </div>
+
+                  {/* Upload Section (interacts with /api/objects/upload) */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 uppercase tracking-widest mb-2">
+                      Upload CV / Portfolio (Optional)
+                    </label>
+                    <motion.div
+                      whileHover={{ scale: 1.01, borderColor: "rgba(0, 242, 254, 0.4)" }}
+                      whileTap={{ scale: 0.99 }}
+                      onClick={() => fileInputRef.current?.click()}
+                      className="border-2 border-dashed border-slate-800 rounded-lg p-6 text-center cursor-pointer hover:border-cyber-cyan hover:bg-cyber-cyan/5 transition-all group"
+                    >
+                      <input
+                        type="file"
+                        ref={fileInputRef}
+                        onChange={handleFileUpload}
+                        className="hidden"
+                        accept=".pdf,.doc,.docx"
+                      />
+
+                      {isUploading ? (
+                        <div className="space-y-2">
+                          <Clock className="h-8 w-8 text-cyber-cyan animate-spin mx-auto" />
+                          <p className="text-xs text-slate-400">Uploading your dossier to secure storage...</p>
+                        </div>
+                      ) : resumeFile ? (
+                        <div className="space-y-2">
+                          <FileText className="h-8 w-8 text-cyber-cyan mx-auto drop-shadow-[0_0_10px_rgba(0,242,254,0.4)]" />
+                          <p className="text-sm font-semibold text-slate-200">{resumeFile.name}</p>
+                          <p className="text-[10px] text-slate-500">File attached successfully</p>
+                        </div>
+                      ) : (
+                        <div className="space-y-2">
+                          <Upload className="h-8 w-8 text-slate-500 group-hover:text-cyber-cyan transition-colors mx-auto" />
+                          <p className="text-sm font-semibold text-slate-300">Click to upload dossier</p>
+                          <p className="text-[10px] text-slate-500">PDF, DOC, DOCX up to 10MB</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  </div>
+
+                  <motion.button
+                    type="submit"
+                    whileHover={{ scale: 1.02, filter: "brightness(1.15)" }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full py-3 rounded-lg text-sm font-bold font-cyber text-slate-900 bg-gradient-to-r from-cyber-cyan to-cyber-blue shadow-lg transition-all"
+                  >
+                    SUBMIT CONFIRM APPLICATION
+                  </motion.button>
+
+                </motion.form>
+              )}
+            </AnimatePresence>
 
           </div>
 
-        </div>
+        </motion.div>
       </section>
 
     </div>

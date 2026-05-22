@@ -174,7 +174,7 @@ export default function Footer() {
         {/* Bottom Copyright details */}
         <div className="border-t border-slate-200/50 dark:border-slate-900/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-400 dark:text-slate-600 text-center sm:text-left leading-normal">
-            &copy; {currentYear} NovaCrystara AI Labs Ltd. All rights reserved. Registered in England & Wales.
+            &copy; {currentYear} NovaCrystara AI Labs Ltd. All rights reserved. Registered in London, United Kingdom.
           </p>
           <div className="flex items-center gap-6">
             <a href="#terms" className="text-xs text-slate-400 dark:text-slate-600 hover:text-sky-600 dark:hover:text-cyber-cyan transition-colors">Terms of Service</a>
